@@ -32,6 +32,12 @@
     │   │   │           ├── 📄 app.css              # Estilos da aplicação
     │   │   │           └── 📄 index.css            # Estilos do PWA
     │   │   │
+    │   │   ├── 📁 auth/                            # Componentes reutilizáveis da aplicação
+    │   │   │   └── 📄 authservice.js               # Componente de botão
+    │   │   │
+    │   │   ├── 📁 components/                      # Componentes reutilizáveis da aplicação
+    │   │   │   └── 📄 ProtectedRoutes.js           # Componente de botão
+    │   │   │   
     │   │   ├── 📁 controllers/                     # Controladores da aplicação
     │   │   │   ├── 📁 admin/                       # Controladores da área administrativa
     │   │   │   │   ├── 📄 DashboardController.js   # Controlador do dashboard administrativo
