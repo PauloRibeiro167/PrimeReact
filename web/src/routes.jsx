@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AdminController from './controllers/AdminController';
-import PublicController from './controllers/PublicController';
+import AdminController from './app/controllers/AdminController';
+import PublicController from './app/controllers/PublicController';
 
 const Routes = () => {
     return (
