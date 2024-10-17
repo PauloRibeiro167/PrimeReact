@@ -1,46 +1,60 @@
-/ecommerce (🌍 Projeto principal)
-├── 📁 /docs (📄 Documentação)
-│   ├── 📄 Diagrama sem nome.drawio        # Diagrama do projeto
-│   └── 📄 mapa de funções da estrutura.odt # Mapa das funções da estrutura
-
-├── 📄 README.md                           # Documentação principal do projeto
-
-├── 📁 /web (🌐 Diretório principal do projeto web)
-│   ├── 📄 .gitignore                      # Arquivo para ignorar arquivos e pastas no Git
-│   ├── 📁 /bin (🚀 Scripts de build e execução)
-│   │   ├── 📄 build                       # Script de build
-│   │   ├── 📄 dev                         # Script de desenvolvimento
-│   │   ├── 📄 generat                     # Script de geração de componentes
-│   │   ├── 📄 start                       # Script de inicialização
-│   │   └── 📄 test                        # Script de testes
-│   ├── 📄 eslint.config.js                # Configurações do ESLint
-│   ├── 📄 index.html                      # HTML principal da aplicação
-│   ├── 📄 package.json                    # Dependências e scripts do projeto
-│   ├── 📁 /public (🌐 Arquivos públicos da aplicação)
-│   │   └── 📄 README.md                   # Documentação específica do projeto web
-│   ├── 📁 /src (💻 Código-fonte da aplicação)
-│   │   ├── 📁 /app (🧩 Diretório principal da aplicação)
-│   │   │   ├── 📁 /assets (🎨 Recursos estáticos)
-│   │   │   │   ├── 📁 /images (🖼️ Imagens do projeto)
-│   │   │   │   └── 📁 /stylesheets (🎨 Estilos da aplicação)
-│   │   │   ├── 📁 /controllers (🛠️ Controladores da aplicação)
-│   │   │   │   ├── 📁 /admin (🔐 Controladores da área administrativa)
-│   │   │   │   └── 📁 /public (🌍 Controladores da área pública)
-│   │   │   ├── 📁 /helpers (🛠️ Métodos auxiliares)
-│   │   │   ├── 📁 /models (🗄️ Modelos de dados)
-│   │   │   │   ├── 📄 Cart.js             # Modelo de carrinho de compras
-│   │   │   │   ├── 📄 Category.js         # Modelo de categorias de produtos
-│   │   │   │   ├── 📄 Order.js            # Modelo de pedido
-│   │   │   │   ├── 📄 Product.js          # Modelo de produto
-│   │   │   │   └── 📄 User.js             # Modelo de usuário (admin e cliente)
-│   │   │   ├── 📁 /pages (📝 Páginas principais da aplicação)
-│   │   │   │   ├── 📁 /admin (🔐 Páginas da área administrativa)
-│   │   │   │   └── 📁 /public (🌍 Páginas da área pública)
-│   │   │   └── 📁 /views (🖥️ Views da aplicação)
-│   │   ├── 📁 /config (⚙️ Configurações da aplicação)
-│   │   │   └── 📄 routes.js               # Configurações de rotas da aplicação
-│   │   ├── 📁 /public (🌐 Arquivos públicos da aplicação)
-│   │   ├── 📁 /src (💻 Código-fonte da aplicação)
-│   │   └── 📁 /tests (✅ Testes da aplicação)
-│   ├── 📄 vite.config.js                  # Configurações do Vite
-
+📁 docs/                                        # Documentação do projeto
+│   ├── 📄 Diagrama sem nome.drawio             # Diagramas do projeto
+│   └── 📄 mapa de funcções da estrutura.odt    # Mapa das funções da estrutura
+│
+📄 README.md                                    # Arquivo de descrição do projeto
+│
+📁 web/                                         # Diretório principal da aplicação web
+    ├── 📄 .gitignore                           # Arquivo de configuração do Git para ignorar arquivos/pastas
+    ├── 📁 bin/                                 # Scripts de build e execução
+    │   ├── 📄 build                            # Script de build
+    │   ├── 📄 dev                              # Script de desenvolvimento
+    │   ├── 📄 generat                          # Script de geração de componentes
+    │   ├── 📄 start                            # Script de inicialização
+    │   └── 📄 test                             # Script de testes
+    │
+    ├── 📄 eslint.config.js                     # Configurações do ESLint
+    ├── 📄 index.html                           # Arquivo HTML principal
+    ├── 📄 package.json                         # Dependências e scripts do projeto
+    ├── 📁 public/                              # Arquivos públicos da aplicação
+    │
+    ├── 📁 src/                                 # Código-fonte da aplicação
+    │   ├── 📁 app/                             # Aplicação principal
+    │   │   ├── 📁 assets/                      # Recursos estáticos (imagens, estilos)
+    │   │   │   ├── 📁 images/                  # Imagens da aplicação
+    │   │   │   └── 📁 stylesheets/             # Estilos da aplicação
+    │   │   │       ├── 📄 pwa/index.css        # Estilos do PWA
+    │   │   │       └── 📄 pwa/app.css          # Estilos da aplicação
+    │   │   │
+    │   │   ├── 📁 controllers/                 # Controladores da aplicação
+    │   │   │   ├── 📁 admin/                   # Controladores da área administrativa
+    │   │   │   └── 📁 public/                  # Controladores da área pública
+    │   │   │
+    │   │   ├── 📁 helpers/                     # Helpers da aplicação
+    │   │   │
+    │   │   ├── 📁 models/                      # Modelos da aplicação
+    │   │   │   ├── 📄 Cart.js                  # Modelo de Carrinho
+    │   │   │   ├── 📄 Category.js              # Modelo de Categoria
+    │   │   │   ├── 📄 Order.js                 # Modelo de Pedido
+    │   │   │   ├── 📄 Product.js               # Modelo de Produto
+    │   │   │   └── 📄 User.js                  # Modelo de Usuário
+    │   │   │
+    │   │   ├── 📁 pages/                       # Páginas da aplicação
+    │   │   │   ├── 📁 admin/                   # Páginas da área administrativa
+    │   │   │   └── 📁 public/                  # Páginas da área pública
+    │   │   │
+    │   │   └── 📁 views/                       # Views da aplicação
+    │   │
+    │   ├── 📁 config/                          # Configurações da aplicação
+    │   │   └── 📄 routes.js                    # Configurações de rotas da aplicação
+    │   │
+    │   ├── 📁 public/                          # Arquivos públicos da aplicação
+    │   │
+    │   └── 📁 tests/                           # Testes da aplicação
+    │       ├── 📄 Cart.test.js                 # Testes do modelo de Carrinho
+    │       ├── 📄 Category.test.js             # Testes do modelo de Categoria
+    │       ├── 📄 Order.test.js                # Testes do modelo de Pedido
+    │       ├── 📄 Product.test.js              # Testes do modelo de Produto
+    │       └── 📄 User.test.js                 # Testes do modelo de Usuário
+    │
+    ├── 📄 vite.config.js                       # Configurações do Vite
