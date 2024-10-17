@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# Verifica se o nome da tabela foi passado como argumento
+if [ -z "$1" ]; then
+  echo "Uso: $0 <nome_da_tabela> [<colunas>]"
+  exit 1
+fi
+
+TABLE_NAME=$1
+shift
+COLUMNS=$@
+
+DB_FILE="database.sqlite"
+MODEL_DIR="models"
+TEMPLATE_DIR="bin/templates"
+TEMPLATE_FILE="$TEMPLATE_DIR/model_template.js"
+MODEL_FILE="$MODEL_DIR/${TABLE_NAME}_model.js"
+
+# Cria o diretório dos models se não existir
+mkdir -p $MODEL_DIR
+
+# Cria o diretório de templates se não existir
+mkdir -p $TEMPLATE_DIR
+
+# Verifica se o arquivo de template existe, se não, cria um template padrão
+if [ ! -f $TEMPLATE_FILE ]; then
+  echo "Arquivo de template $TEMPLATE_FILE não encontrado! Criando template padrão..."
+  cat <<EOT > $TEMPLATE_FILE
+                                // @ts-nocheck
+
+                                class PlaceholderModel {
+                                  constructor() {
+                                    // Inicialização do model
+                                  }
+
+                                  // Métodos do model
+                                }
+
+                                module.exports = new PlaceholderModel();
+EOT
+fi
+
+# Cria a tabela no banco de dados SQLite
+if [ -z "$COLUMNS" ]; then
+  sqlite3 $DB_FILE "CREATE TABLE IF NOT EXISTS $TABLE_NAME (id INTEGER PRIMARY KEY AUTOINCREMENT);"
+else
+  sqlite3 $DB_FILE "CREATE TABLE IF NOT EXISTS $TABLE_NAME (id INTEGER PRIMARY KEY AUTOINCREMENT, $COLUMNS);"
+fi
+
+# Cria o novo arquivo de model baseado no template
+sed "s/Placeholder/$TABLE_NAME/g" $TEMPLATE_FILE > $MODEL_FILE
+
+echo "Tabela $TABLE_NAME criada com sucesso no banco de dados $DB_FILE!"
+echo "Model $MODEL_FILE criado com sucesso!"

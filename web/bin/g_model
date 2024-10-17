@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Verifica se o nome do model foi passado como argumento
+if [ -z "$1" ]; then
+  echo "Uso: $0 <nome_do_model>"
+  exit 1
+fi
+
+MODEL_NAME=$1
+MODEL_DIR="models"
+TEMPLATE_DIR="bin/templates"
+TEMPLATE_FILE="$TEMPLATE_DIR/model_template.js"
+MODEL_FILE="$MODEL_DIR/${MODEL_NAME}_model.js"
+
+# Cria o diretório dos models se não existir
+mkdir -p $MODEL_DIR
+
+# Cria o diretório de templates se não existir
+mkdir -p $TEMPLATE_DIR
+
+# Verifica se o arquivo de template existe, se não, cria um template padrão
+if [ ! -f $TEMPLATE_FILE ]; then
+  echo "Arquivo de template $TEMPLATE_FILE não encontrado! Criando template padrão..."
+  cat <<EOT > $TEMPLATE_FILE
+                                // @ts-nocheck
+
+                                class PlaceholderModel {
+                                  constructor() {
+                                    // Inicialização do model
+                                  }
+
+                                  // Métodos do model
+                                }
+
+                                module.exports = new PlaceholderModel();
+EOT
+fi
+
+# Cria o novo arquivo de model baseado no template
+sed "s/Placeholder/$MODEL_NAME/g" $TEMPLATE_FILE > $MODEL_FILE
+
+echo "Model $MODEL_FILE criado com sucesso!"

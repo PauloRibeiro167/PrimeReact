@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Verifica se o nome do controller foi passado como argumento
+if [ -z "$1" ]; then
+  echo "Uso: $0 <nome_do_controller>"
+  exit 1
+fi
+
+CONTROLLER_NAME=$1
+CONTROLLER_DIR="controllers"
+TEMPLATE_DIR="bin/templates"
+TEMPLATE_FILE="$TEMPLATE_DIR/controller_template.js"
+CONTROLLER_FILE="$CONTROLLER_DIR/${CONTROLLER_NAME}_controller.js"
+
+# Cria o diretório dos controllers se não existir
+mkdir -p $CONTROLLER_DIR
+
+# Cria o diretório de templates se não existir
+mkdir -p $TEMPLATE_DIR
+
+# Verifica se o arquivo de template existe, se não, cria um template padrão
+if [ ! -f $TEMPLATE_FILE ]; then
+  echo "Arquivo de template $TEMPLATE_FILE não encontrado! Criando template padrão..."
+  cat <<EOT > $TEMPLATE_FILE
+                            // @ts-nocheck
+                                class {{CONTROLLER_NAME}}Controller {
+                                constructor() { // Inicialização do controller}
+                                                // Métodos do controller}
+                            
+                               module.exports = new {{CONTROLLER_NAME}}Controller();
+EOT
+fi
+
+# Cria o novo arquivo de controller baseado no template
+sed "s/Placeholder/$CONTROLLER_NAME/g" $TEMPLATE_FILE > $CONTROLLER_FILE
+
+echo "Controller $CONTROLLER_FILE criado com sucesso!"

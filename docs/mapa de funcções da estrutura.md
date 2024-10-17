@@ -47,6 +47,18 @@
     │   │   │       └── 📄 UsersController.js       # Controlador de usuários públicos
     │   │   │
     │   │   ├── 📁 helpers/                         # Helpers da aplicação
+    │   │   │   ├── 📁 admin/                       # Helpers da área administrativa
+    │   │   │   │   ├── 📄 DashboardHelper.js       # Helper do dashboard administrativo
+    │   │   │   │   ├── 📄 OrdersHelper.js          # Helper de pedidos administrativos
+    │   │   │   │   ├── 📄 ProductsHelper.js        # Helper de produtos administrativos
+    │   │   │   │   └── 📄 UsersHelper.js           # Helper de usuários administrativos
+    │   │   │   │
+    │   │   │   └── 📁 public/                      # Helpers da área pública
+    │   │   │       ├── 📄 CartHelper.js            # Helper do carrinho de compras
+    │   │   │       ├── 📄 CatalogHelper.js         # Helper do catálogo de produtos
+    │   │   │       ├── 📄 HomeHelper.js            # Helper da página inicial
+    │   │   │       ├── 📄 OrdersHelper.js          # Helper de pedidos públicos
+    │   │   │       └── 📄 UsersHelper.js           # Helper de usuários públicos
     │   │   │
     │   │   ├── 📁 models/                          # Modelos da aplicação
     │   │   │   ├── 📄 Cart.js                      # Modelo de Carrinho
