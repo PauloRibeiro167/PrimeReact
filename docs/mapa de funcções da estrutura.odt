@@ -66,6 +66,18 @@
     │   │   │   ├── 📄 main.jsx                     # Arquivo principal do PWA
     │   │   │   └── 📄 app.jsx                      # Arquivo de aplicação do PWA
     │   │   │
+    │   │   ├── 📁 pages/                           # Páginas da aplicação
+    │   │   │   ├── 📁 admin/                       # Páginas da área administrativa
+    │   │   │   │   ├── 📄 AdminDashboardPage.jsx   # Página do dashboard administrativo
+    │   │   │   │   ├── 📄 ManageOrdersPage.jsx     # Página de gerenciamento de pedidos
+    │   │   │   │   ├── 📄 ManageProductsPage.jsx   # Página de gerenciamento de produtos
+    │   │   │   │   ├── 📄 ManageUsersPage.jsx      # Página de gerenciamento de usuários
+    │   │   │   │
+    │   │   │   └── 📁 public/                      # Páginas da área pública
+    │   │   │       ├── 📄 CatalogPage.jsx          # Página do catálogo de produtos
+    │   │   │       ├── 📄 HomePage.jsx             # Página inicial
+    │   │   │       ├── 📄 ProductDetailsPage.jsx   # Página de detalhes do produto
+    │   │   │
     │   │   └── 📁 views/                            # Views da aplicação
     │   │
     │   ├── 📁 config/                              # Configurações da aplicação
