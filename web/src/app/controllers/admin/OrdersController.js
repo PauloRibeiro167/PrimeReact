@@ -1,6 +1,9 @@
-import { someHelperFunction } from '@helpers/someHelperFile';
-import { OrdersModel } from '@models/OrdersModel';
+import { getAdminOrders } from '@helpersAdmin/OrdersHelper';
+import { ProductsModel } from '@models/ProductsModel';
 
-export class OrdersController {
-
+export class DashboardController {
+  
+  fetchgetAdminOrders() {
+    return getAdminOrders();
+  }
 }

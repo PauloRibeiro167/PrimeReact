@@ -1,6 +1,9 @@
-import { someHelperFunction } from '@helpers/someHelperFile';
-import { DashboardModel } from '@models/DashboardModel';
+import { getDashboardData } from '@helpersAdmin/DashboardHelper';
+import { ProductsModel } from '@models/ProductsModel';
 
 export class DashboardController {
-
+  // Método que acessa o getDashboardData
+  fetchDashboardData() {
+    return getDashboardData();
+  }
 }

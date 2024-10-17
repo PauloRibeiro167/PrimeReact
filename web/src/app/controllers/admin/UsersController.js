@@ -1,6 +1,10 @@
-import { someHelperFunction } from '@helpers/someHelperFile';
-import { UsersModel } from '@models/UsersModel';
+import { getAdminUsers } from '@HelpersAdmin/UsersHelper';
+import { ProductsModel } from '@models/ProductsModel';
 
-export class UsersController {
+export class ProductsController {
+
+  fetchgetAdminUsers() {
+    return getAdminUsers();
+  }
 
 }

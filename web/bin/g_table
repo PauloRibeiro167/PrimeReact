@@ -26,17 +26,17 @@ mkdir -p $TEMPLATE_DIR
 if [ ! -f $TEMPLATE_FILE ]; then
   echo "Arquivo de template $TEMPLATE_FILE não encontrado! Criando template padrão..."
   cat <<EOT > $TEMPLATE_FILE
-                                // @ts-nocheck
+// @ts-nocheck
 
-                                class PlaceholderModel {
-                                  constructor() {
-                                    // Inicialização do model
-                                  }
+class PlaceholderModel {
+  constructor() {
+    // Inicialização do model
+  }
 
-                                  // Métodos do model
-                                }
+  // Métodos do model
+}
 
-                                module.exports = new PlaceholderModel();
+module.exports = new PlaceholderModel();
 EOT
 fi
 
